@@ -7,7 +7,176 @@
     <title>name-example</title>
 </head>
 
-<body>
+<body class="root">
+    <div class="header">
+        <div class="header__container">
+            <button class="header__button button-reset"></button>
+            <button class="header__button button-type-two">Screen Saver</button>
+        </div>
+        <div class="header__search-container search-input-container">
+            <input id="search" type="text" class="header__search-input" placeholder="Search...">
+
+        </div>
+        <button class="header__button button-home">HOME</button>
+    </div>
+    <div class="flex-group">
+        <div class="left-aside">
+            <div class="svg-container  top-left">
+                <div class="grid-container">
+                    <div class="left-aside-flex">
+                        <div class="left-aside-container">
+                            <p class="chart-heading">Admin employees by gender</p>
+                            <div class="chart-line-container-admin">
+                                <!-- Line chart будет создан здесь -->
+                            </div>
+                        </div>
+                        <div class="left-aside-container-chart">
+                            <p class="chart-heading">Admin employees by Nationality</p>
+                            <div class="chart-container chart-container-admin"></div>
+                            <div id="legend" class="legends-container legends-admin"></div>
+                        </div>
+                    </div>
+                    <div class="left-aside-flex">
+                        <div class="left-aside-container">
+                            <p class="chart-heading">Academic employees by gender</p>
+                            <div class="chart-line-container-academic">
+                                <!-- Line chart будет создан здесь -->
+                            </div>
+                        </div>
+                        <div class="left-aside-container left-aside-container-chart">
+                            <p class="chart-heading">Admin employees by Nationality</p>
+                            <div class="chart-container chart-container-academic">
+                                <!-- Pie chart будет создан здесь -->
+                            </div>
+                            <div id="AcademicLegend" class="legends-container legends-academic">
+                                <!-- Лейблы  будут созданы здесь -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="date-container">
+                    <p class="date-number">01.12.2021</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="calendar__year-progress-bar__dpo"
+                        viewBox="0 0 100 12">
+                        <path fill="#FB9B2B" fill-opacity=".2"
+                            d="M11.5 0h4l-11 12h-4l11-12ZM17.5 0h4l-11 12h-4l11-12ZM23.5 0h4l-11 12h-4l11-12ZM29.5 0h4l-11 12h-4l11-12ZM35.5 0h4l-11 12h-4l11-12ZM41.5 0h4l-11 12h-4l11-12Z" />
+                        <path fill="#FB9B2B"
+                            d="M47.5 0h4l-11 12h-4l11-12ZM53.5 0h4l-11 12h-4l11-12ZM59.5 0h4l-11 12h-4l11-12ZM65.5 0h4l-11 12h-4l11-12ZM71.5 0h4l-11 12h-4l11-12ZM77.5 0h4l-11 12h-4l11-12ZM83.5 0h4l-11 12h-4l11-12ZM89.5 0h4l-11 12h-4l11-12ZM95.5 0h4l-11 12h-4l11-12Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="svg-container bottom-left">
+                <p class="block-title">Scientific Research and conferences</p>
+                <div class="grid-container">
+                    <div class="left-aside-container">
+                        <p class="chart-heading">Publication</p>
+                        <div class="chart-line-container-publication">
+                            <!-- Line chart будет создан здесь -->
+                        </div>
+                    </div>
+                    <div class="left-aside-container">
+                        <p class="chart-heading">Conferences</p>
+                        <div class="chart-line-container-conference">
+                            <!-- Line chart будет создан здесь -->
+                        </div>
+                    </div>
+                </div>
+                <p class="block-title">Research centers and labs</p>
+                <div class="grid-container grid-container_margin">
+                    <div class="left-aside-container">
+                        <p class="chart-heading">Research centers plan</p>
+                        <div class="chart-line-container-centers">
+                            <!-- Line chart будет создан здесь -->
+                        </div>
+                    </div>
+                </div>
+                <div class="date-container">
+                    <p class="date-number">24.12.2021</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="calendar__year-progress-bar__dpo"
+                        viewBox="0 0 100 12">
+                        <path fill="#FB9B2B" fill-opacity=".2"
+                            d="M11.5 0h4l-11 12h-4l11-12ZM17.5 0h4l-11 12h-4l11-12ZM23.5 0h4l-11 12h-4l11-12ZM29.5 0h4l-11 12h-4l11-12ZM35.5 0h4l-11 12h-4l11-12ZM41.5 0h4l-11 12h-4l11-12Z" />
+                        <path fill="#FB9B2B"
+                            d="M47.5 0h4l-11 12h-4l11-12ZM53.5 0h4l-11 12h-4l11-12ZM59.5 0h4l-11 12h-4l11-12ZM65.5 0h4l-11 12h-4l11-12ZM71.5 0h4l-11 12h-4l11-12ZM77.5 0h4l-11 12h-4l11-12ZM83.5 0h4l-11 12h-4l11-12ZM89.5 0h4l-11 12h-4l11-12ZM95.5 0h4l-11 12h-4l11-12Z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="circle-container">
+            <div class="circle-left">
+                <div class="svg-container circle-lt">
+                    <div class="chart-block">
+                    </div>
+                </div>
+                <div class="svg-container circle-lb">
+                    <p class="circle-text">New CAA OBF compliance 2025-2028</p>
+                </div>
+            </div>
+            <div class="circle-center">
+                <div class="svg-container circle-t"></div>
+
+                <div class="svg-container circle-c">
+                    <div class="circle-block performance-diagram-container">
+
+                    </div>
+                </div>
+                <div class="svg-container circle-b">
+                    <p class="circle-number">11</p>
+                    <p class="circle-text">Industrial Partners</p>
+                </div>
+            </div>
+            <div class="circle-right">
+                <div class="svg-container circle-rt"></div>
+                <div class="svg-container circle-rb">
+                    <div class="circle-container-rb">
+                        <p class="circle-number">15</p>
+                        <p class="circle-text">Number <br>
+                            of Professional Development Programs</p>
+                    </div>
+                    <div class="circle-container-rb">
+                        <p class="circle-number">32</p>
+                        <p class="circle-text">Number of Applications Submitted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-aside">
+            <div class="svg-container  top-right">
+                <p class="block-title">
+                    Indicators (by Category) for the Section on the University’s International Activities
+                </p>
+            </div>
+            <div class="svg-container bottom-right">
+                <p class="block-title">University Admissions</p>
+                <p class="block-title">Professional Development Courses</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="svg-container bottom-center">
+        <p class="block-title block-title_students">Information about students</p>
+        <div class="grid-container">
+            <div class="flex-container">
+                <div class="chart-line-container-enrolled">
+                    <!-- Line chart будет создан здесь -->
+                </div>
+                <div class="chart-line-container-firstSemester">
+                    <!-- Line chart будет создан здесь -->
+                </div>
+                <div class="chart-line-container-secondSemester">
+                    <!-- Line chart будет создан здесь -->
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="chart-line-container-bachelors">
+                    <!-- Line chart будет создан здесь -->
+                </div>
+                <div class="chart-line-container-masters">
+                    <!-- Line chart будет создан здесь -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

@@ -1,0 +1,27 @@
+.header__button{
+    color: #FEA033;
+    font-size: 0.938vw;
+    font-variation-settings: 'wght' 400;
+    line-height: 111.111%; 
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    min-block-size: 2.604vw;
+    min-inline-size: 2.604vw;
+    padding-block: 0.781vw;
+    padding-inline: 0.521vw;
+}
+
+.button-home{
+    color: #FFF;
+    padding-inline: 4.271vw;
+    padding-block-start: 0.833vw;
+    padding-block-end: 1.589vw;
+    align-self: flex-end;
+    transform: translateY(.8vw);
+}
+
+.button-type-two{
+    background-size: cover;
+    padding-block: .781vw;
+    padding-inline: 1.078vw;
+}

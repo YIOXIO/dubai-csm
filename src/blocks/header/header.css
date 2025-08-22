@@ -1,0 +1,55 @@
+@import './__button/header__button.css';
+
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    margin-block-end: 1.563vw;
+    min-block-size: 4.967vw;
+    justify-content: space-between;
+        padding-inline-end: 0.9vw;
+
+
+    .header__container{
+        display: flex;
+        align-items: center;
+        gap: 1.5vw;
+        align-self: flex-end;
+        margin-inline-end: 3.1vw;
+        
+    }
+
+    
+    .header__search-container{
+        display: flex;
+        align-items: center;
+        gap: 0.5vw;
+        padding-inline: 0.5vw;
+        padding-block: 0.5vw;
+        background-color: hsla(227, 66%, 20%, 1);
+        border-radius: 0.625vw;
+        block-size: 3.568vw;
+        inline-size: 50.959vw;
+        /* margin-inline-end: 9vw; */
+    }
+    .header__search-input{
+    inline-size: 90%;
+    block-size:  100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.833vw;
+    font-variation-settings: 'wght' 400;
+    line-height: 1.6;
+    margin-inline-start: auto;
+    }
+    
+
+}
+
+.header__search-input::placeholder {
+    color: #fff;
+    font-size: .833vw;
+    font-variation-settings: 'wght' 400;
+    line-height: 1.6;
+}

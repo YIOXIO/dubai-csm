@@ -29,8 +29,25 @@ module.exports = {
                 exclude: '/node_modules'
             },
             {
-                test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-                type: 'asset/resource'
+                oneOf: [
+                    {
+                        test: /\.svg$/,
+                        resourceQuery: /inline/, // import frame from './frame.svg?inline'
+                        use: [
+                            {
+                                loader: 'svg-inline-loader',
+                                options: {
+                                    removeTags: true,
+                                    removingTagAttrs: ['id', 'data-name'],
+                                },
+                            },
+                        ],
+                    },
+                    {
+                        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+                        type: 'asset/resource'
+                    }
+                ]
             },
             {
                 test: /\.css$/,
@@ -42,7 +59,7 @@ module.exports = {
                 },
                     'postcss-loader'
                 ]
-            },
+            }
         ]
     },
     plugins: [
