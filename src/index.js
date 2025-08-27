@@ -155,3 +155,33 @@ function animateNavigationLine() {
 // Запуск при загрузке
 document.addEventListener('DOMContentLoaded', animateNavigationLine);
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Находим кнопку по классу
+    const employeesButton = document.querySelector('.admin-link');
+
+    // Добавляем обработчик клика
+    if (employeesButton) {
+        employeesButton.addEventListener('click', function () {
+            // Переход на страницу employees.html
+            window.location.href = 'employee-admin.html';
+        });
+
+        // Добавляем курсор pointer для индикации кликабельности
+        employeesButton.style.cursor = 'pointer';
+    }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Находим кнопку по классу
+    const employeesButton = document.querySelector('.academic-link');
+
+    // Добавляем обработчик клика
+    if (employeesButton) {
+        employeesButton.addEventListener('click', function () {
+            // Переход на страницу employees.html
+            window.location.href = 'employee-academic.html';
+        });
+
+        // Добавляем курсор pointer для индикации кликабельности
+        employeesButton.style.cursor = 'pointer';
+    }
+});

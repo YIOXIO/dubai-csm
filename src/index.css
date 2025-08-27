@@ -812,3 +812,7 @@ position: absolute;
     font-size: 0.573vw;
 
 }
+
+.svg-container{
+    cursor: pointer;
+}

@@ -81,6 +81,16 @@ module.exports = {
             template: './src/index.html',
             inject: 'body'
         }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/employees/employee-admin/employee-admin.html',
+            inject: 'body',
+            filename: 'employee-admin.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/employees/employee-academic/employee-academic.html',
+            inject: 'body',
+            filename: 'employee-academic.html'
+        }),
         new CopyWebpackPlugin({
             patterns: [
                 {
