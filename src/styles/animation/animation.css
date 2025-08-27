@@ -1,0 +1,128 @@
+/* Улучшенные анимации для линий */
+.navigation-line-container {
+    position: absolute;
+    z-index: 100;
+}
+
+.bottom-left-line, .top-left-line {
+    filter: drop-shadow(0 0 5px rgba(66, 139, 255, 0.5));
+}
+
+.bottom-left-line path, .top-left-line path {
+    stroke: hsla(216, 86%, 53%, 1);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+}
+
+/* Пульсирующий эффект для точек */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(45deg);
+        opacity: 0.8;
+    }
+}
+
+.bottom-left-line::before,
+.bottom-left-line::after,
+.top-left-line::before,
+.top-left-line::after {
+    animation: 
+        fadeInBefore 0.5s ease-in-out forwards,
+        pulse 2s ease-in-out infinite;
+    animation-delay: 1.7s, 2.2s;
+}
+
+
+/* Анимация появления круговых диаграмм */
+.circle-t, .circle-rt, .circle-rb, .circle-b, .circle-lb, .circle-lt {
+    opacity: 0;
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.circle-t { animation-delay: 0.2s; }
+.circle-rt { animation-delay: 0.4s; }
+.circle-rb { animation-delay: 0.6s; }
+.circle-b { animation-delay: 0.8s; }
+.circle-lb { animation-delay: 1s; }
+.circle-lt { animation-delay: 1.2s; }
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Анимация появления текста */
+.circle-text, .circle-number, .block-title {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.circle-text { animation-delay: 0.8s; }
+.circle-number { animation-delay: 0.6s; }
+.block-title { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        /* transform: translateY(20px); */
+    }
+    100% {
+        opacity: 1;
+        /* transform: translateY(0); */
+    }
+}
+
+/* Анимация счетчиков для чисел */
+.circle-number-total, .circle-number-success {
+    opacity: 0;
+    animation: countUp 2s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes countUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Анимация появления элементов сетки */
+.grid-container > * {
+    opacity: 0;
+    animation: gridItemAppear 0.5s ease-out forwards;
+}
+
+.grid-container > *:nth-child(1) { animation-delay: 0.1s; }
+.grid-container > *:nth-child(2) { animation-delay: 0.2s; }
+.grid-container > *:nth-child(3) { animation-delay: 0.3s; }
+.grid-container > *:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes gridItemAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

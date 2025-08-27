@@ -23,6 +23,7 @@
     .header__search-container{
         display: flex;
         align-items: center;
+        font-family: 'Montserrat';
         gap: 0.5vw;
         padding-inline: 0.5vw;
         padding-block: 0.5vw;

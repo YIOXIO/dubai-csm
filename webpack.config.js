@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -15,11 +16,22 @@ module.exports = {
 
     mode: 'development',
     devServer: {
-        static: path.resolve(__dirname, './dist'),
+        static: [
+            {
+                directory: path.resolve(__dirname, 'dist'),
+                publicPath: '/',
+                watch: true
+            },
+            {
+                directory: path.resolve(__dirname, 'public'), // добавляем public как статическую папку
+                publicPath: '/',
+                watch: true
+            }
+        ],
         compress: true,
         port: 8080,
-
-        open: true
+        open: true,
+        hot: true
     },
     module: {
         rules: [
@@ -32,7 +44,7 @@ module.exports = {
                 oneOf: [
                     {
                         test: /\.svg$/,
-                        resourceQuery: /inline/, // import frame from './frame.svg?inline'
+                        resourceQuery: /inline/,
                         use: [
                             {
                                 loader: 'svg-inline-loader',
@@ -51,12 +63,14 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 1
-                    }
-                },
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
                     'postcss-loader'
                 ]
             }
@@ -64,11 +78,31 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            inject: 'body'
         }),
-
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'public/js',
+                    to: 'js',
+                    noErrorOnMissing: true,
+                    globOptions: {
+                        ignore: ['**/.DS_Store', '**/Thumbs.db']
+                    }
+                },
+                {
+                    from: 'public',
+                    to: '',
+                    filter: (resourcePath) => {
+                        // Исключаем папки, которые уже обрабатываются отдельно
+                        return !resourcePath.includes('/js/');
+                    },
+                    noErrorOnMissing: true
+                }
+            ]
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
     ]
 };
-

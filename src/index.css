@@ -2,7 +2,7 @@
 @import './styles/global.css';
 @import './vendor/fonts/fonts.css';
 
-
+@import './styles/animation/animation.css';
 @import './blocks/header/header.css';
 
 body {
@@ -102,7 +102,7 @@ body {
     block-size: 15.51vw;
     inline-size: 21.652vw;
     transform: translate(-4vw, 2.6vw);
-        padding-inline: 1.4vw 1.2vw;
+        padding-inline: 1.4vw .5vw;
     padding-block-start: 2vw;
 }
 
@@ -111,10 +111,13 @@ body {
     inline-size: 21.719vw;
     transform: translate(-1.86vw, 8.3vw);
     padding-block-start: 1.8vw;
-    padding-inline: 1.3vw;
+    padding-inline:1.3vw 0.6vw;
 }
 .bottom-right .block-title{
     margin-block-end: .25vw;
+}
+.bottom-right .block-title:nth-of-type(2){
+    margin-block-end: 1.2vw;
 }
 
 .left-aside {
@@ -190,15 +193,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 }
 
 .circle-lt {
     inline-size: 15.713vw;
     block-size: 18.513vw;
+    display: flex;
+        flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        z-index: -1;
 }
-
-
-
 
 
 
@@ -378,4 +384,431 @@ body {
 .chart-line-container-masters{
     padding-inline-start: .4vw;
 }
+.chart-line-container-masters-programm .legend-name{
+    font-size: 0.521vw;
+        letter-spacing: 0.052vw;
+}
+.chart-line-container-bachelors-programm .legend-name{
+    font-size: 0.521vw;
+        letter-spacing: 0.052vw;
+}
 
+.performance-diagram-container::before{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 12.5vw;
+    width: 12.5vw;
+    left: 3.3vw;
+    top: 3.2vw;
+    border: 0.053vw solid hsla(216, 100%, 56%, 0.2);
+    border-radius: 50%;
+}
+
+.performance-diagram-container::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border: 0.053vw solid hsla(216, 100%, 56%, 0.2);
+    height: 21.6vw;
+    left: -1.3vw;
+    top: -1.3vw;;
+    width: 21.6vw;
+    border-radius: 50%;
+}
+
+.small-frame{
+    inline-size: 12.488vw;
+    block-size: 6.038vw;
+    padding-inline: 1.3vw;
+    padding-block: 1.1vw;
+}
+
+
+.line-diamond{
+    block-size: 0.521vw;
+    inline-size: 0.521vw;
+    border: 0.156vw solid hsla(201, 100%, 63%, 1);
+    rotate: -135deg;
+    background-color: #fff;
+}
+.chart-line{
+    min-block-size: 0.208vw;
+}
+.line-main-wrapper .legend-number{
+    font-size: 1.042vw;
+    font-family: 'Montserrat';
+    font-variation-settings: 'wght' 600;
+    line-height: 75%;
+
+}
+.chart-line-container-masters-programm .line-diamond{
+    border: 0.156vw solid hsla(163, 100%, 50%, 1);
+
+}
+.chart-line-container-masters-programm .chart-line-container{
+    justify-content: center;
+    
+}
+.line-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.line-main-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+    inline-size: fit-content;
+    align-items: center;
+    max-inline-size: 3vw;
+}
+
+.small-frame .chart-line-container{
+    align-items: flex-end;
+    margin-block-end: .4vw;
+}
+
+.grid-corner{
+inline-size: 5.833vw;
+    block-size: 4.683vw;
+    display: flex;
+    flex-direction: column;
+        align-items: flex-end;
+            padding-inline-end: 1.3vw;
+    padding-block: 0.8vw;
+    gap: .5vw;
+}
+
+.bottom-right-flex{
+    display: flex;
+    align-items: center;
+    gap: .4vw;
+    margin-block-end: 1.6vw;
+}
+.grid-corner-number{
+    color: hsla(53, 82%, 61%, 1);
+    font-size: 0.833vw;
+    font-family: 'Montserrat';
+    font-variation-settings: 'wght' 700;
+    line-height: 75%;
+}
+.grid-corner-text{
+    color: #FFF;
+    line-height: 112.5%;
+    font-size: 0.417vw;
+        max-inline-size: 3.6vw;
+        text-align: right;
+        letter-spacing: 0.042vw;
+}
+.grid-corner-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#myearth {
+  width: 10.188vw;
+  height: 10.188vw;
+  cursor: pointer;
+  left: -1vw;
+  top: -1vw;
+
+}
+
+#glow {
+  position: absolute;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(0, 156, 255, 0.05) 25%, rgba(0, 156, 255, 0.15) 53%, rgba(0, 156, 255, 0.05) 56%, rgba(0, 156, 255, 0) 70%);
+    transform: translate(-50%, -50%);
+    height: 9.8vw;
+    left: 5vw;
+    top: 5vw;
+    width: 100%;
+    z-index: 200;
+}
+
+#myearth canvas {
+    object-fit: contain;
+}
+.top-right-container{
+    display: flex;
+    gap: 0.6vw;
+    block-size: 8vw;
+}
+.top-right-block{
+    display: flex;
+    align-items: center;
+        gap: 0.4vw;
+}
+.top-right-flex{
+    display: flex;
+    flex-direction: column;
+    padding-block-start: 1.1vw;
+    gap: 0.2vw;
+
+
+}
+.top-right-number{
+    font-size: 1.042vw;
+    color: hsla(32, 98%, 45%, 1);
+    line-height: 74.545%;
+}
+.top-right-text{
+    color: hsla(45, 33%, 82%, 1);
+    font-size: 0.369vw;
+    line-height: 133.333%;
+    letter-spacing: 0.047vw;
+    text-transform: uppercase;
+    max-inline-size: 6vw;
+    
+}
+
+.grid-container .date-container{
+        grid-column: span 2;
+}
+
+.circle-block {
+    position: relative;
+}
+
+.circle-container-total{
+    left: 5.7vw;
+    position: absolute;
+    top: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7vw;
+}
+
+.circle-number-total{
+    font-size: 3.706vw;
+    color: #FFF;
+    text-align: center;
+    font-variation-settings:'wght' 500;
+    line-height: 90%;
+}
+
+.circle-text-total{
+    font-size: 0.953vw;
+    color: #FFF;
+    line-height: 131.171%; 
+    letter-spacing: 0.095vw;
+    text-transform: uppercase;
+    text-align: center;
+    max-inline-size: 8vw;
+}
+
+.circle-container-success{
+    
+position: absolute;
+    top: 10.3vw;
+    left: 0;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2vw;
+
+}
+
+.circle-number-success{
+    color: hsla(32, 98%, 45%, 1);
+    font-family: 'Montserrat';
+    font-size: 1.165vw;
+    font-variation-settings: 'wght' 700;
+    line-height: 90.909%; /* 90.909% */
+}
+
+.circle-text-success{
+    color: #E27B02;
+    text-align: center;
+    font-size: 0.529vw;
+    line-height: 155%; 
+    letter-spacing: 0.053vw;
+    text-transform: uppercase;
+    max-inline-size: 3.6vw;
+}
+
+.progress-bar-segment {
+    transition: fill-opacity 0.3s ease;
+}
+
+.circle-number-total,
+.circle-number-success {
+    transition: all 0.3s ease;
+}
+.navigation-line-container{
+    position: absolute;
+}
+.bottom-left-line{
+    inline-size: 9.4vw;
+    left: 21.65vw;
+    top: 5.45vw;
+}
+
+.bottom-left-line::before{
+    content: "";
+    display: block;
+    inline-size: .442vw;
+    block-size: .442vw;
+    position: absolute;
+    background: hsla(216, 86%, 53%, 1);
+    rotate: 90deg;
+    bottom: -.05vw;
+    left: -0.26vw;
+        opacity: 0;
+    animation: fadeInBefore 0.5s ease-in-out 1.7s forwards;
+}
+.bottom-left-line::after{
+    content: "";
+    display: block;
+    inline-size: .442vw;
+    block-size: .442vw;
+    position: absolute;
+    background: hsla(216, 86%, 53%, 1);
+     right: -0.2vw;
+    rotate: 95deg;
+    top: -0.15vw;
+    opacity: 0;
+    animation: fadeInAfter 0.5s ease-in-out 0.5s forwards;
+}
+
+.top-left-line{
+        inline-size: 8vw;
+    right: -8vw;
+    top: 6.6vw;
+}
+
+.top-left-line::before{
+    content: "";
+    display: block;
+    inline-size: .442vw;
+    block-size: .442vw;
+    position: absolute;
+    background: hsla(216, 86%, 53%, 1);
+    rotate: 90deg;
+    top: -.15vw;
+    left: -0.26vw;
+        opacity: 0;
+    animation: fadeInBefore 0.5s ease-in-out 2.8s forwards;
+}
+.top-left-line::after{
+    content: "";
+    display: block;
+    inline-size: .442vw;
+    block-size: .442vw;
+    position: absolute;
+    background: hsla(216, 86%, 53%, 1);
+    bottom: 0vw;
+    right: -0.15vw;
+    rotate: 95deg;
+    opacity: 0;
+    animation: fadeInAfter 0.5s ease-in-out 0.5s forwards;
+}
+
+ 
+
+.bottom-left-line svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
+}
+.bottom-left-line svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
+}
+
+/* Анимация рисования линии */
+.bottom-left-line path {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 6000;
+    animation: drawLine 1.5s linear 1s forwards;
+}
+.top-left-line svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
+}
+.top-left-line svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
+}
+
+/* Анимация рисования линии */
+.top-left-line path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 1000;
+    animation: drawLine 1.5s linear 1s forwards;
+}
+
+
+
+
+
+@keyframes fadeInAfter {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInSvg {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drawLine {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 250;
+    }
+}
+
+@keyframes fadeInBefore {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+.circle-container-lt{
+    display: flex;
+    flex-direction: column;
+            inline-size: fit-content;
+    align-items: center;
+    transform: translate(1.2vw, -0.7vw);
+    gap: 0.3vw;
+
+}
+.circle-container-lt:nth-child(2){
+    transform: translate(-3.35vw, 2.6vw);
+
+}
+.circle-container-lt .circle-text{
+    transform: none;
+    max-inline-size: 7vw;
+    font-size: 0.573vw;
+
+}

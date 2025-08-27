@@ -8,6 +8,9 @@
 </head>
 
 <body class="root">
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
     <div class="header">
         <div class="header__container">
             <button class="header__button button-reset"></button>
@@ -22,6 +25,8 @@
     <div class="flex-group">
         <div class="left-aside">
             <div class="svg-container  top-left">
+                <div class="navigation-line-container top-left-line"></div>
+
                 <div class="grid-container">
                     <div class="left-aside-flex">
                         <div class="left-aside-container">
@@ -66,6 +71,8 @@
                 </div>
             </div>
             <div class="svg-container bottom-left">
+                <div class="navigation-line-container bottom-left-line"></div>
+
                 <p class="block-title">Scientific Research and conferences</p>
                 <div class="grid-container">
                     <div class="left-aside-container">
@@ -102,10 +109,17 @@
                 </div>
             </div>
         </div>
+
         <div class="circle-container">
             <div class="circle-left">
                 <div class="svg-container circle-lt">
-                    <div class="chart-block">
+                    <div class="circle-container-lt">
+                        <p class="circle-number">7</p>
+                        <p class="circle-text">Number of Academic employees</p>
+                    </div>
+                    <div class="circle-container-lt">
+                        <p class="circle-number">21</p>
+                        <p class="circle-text">Number of Admin employees</p>
                     </div>
                 </div>
                 <div class="svg-container circle-lb">
@@ -114,10 +128,16 @@
             </div>
             <div class="circle-center">
                 <div class="svg-container circle-t"></div>
-
                 <div class="svg-container circle-c">
+                    <div class="circle-container-total">
+                        <p class="circle-number-total"></p>
+                        <p class="circle-text-total">Total number of hours</p>
+                    </div>
+                    <div class="circle-container-success">
+                        <p class="circle-number-success"></p>
+                        <p class="circle-text-success">Coplited workload</p>
+                    </div>
                     <div class="circle-block performance-diagram-container">
-
                     </div>
                 </div>
                 <div class="svg-container circle-b">
@@ -143,12 +163,70 @@
         <div class="right-aside">
             <div class="svg-container  top-right">
                 <p class="block-title">
-                    Indicators (by Category) for the Section on the University’s International Activities
+                    Indicators (by Category) for the Section <br> on the University’s International Activities
                 </p>
+                <div class="top-right-container">
+                    <div id="myearth" class="earth-container">
+                        <div id="glow"></div>
+                    </div>
+                    <div class="top-right-flex">
+                        <div class="top-right-block">
+                            <p class="top-right-number">XX</p>
+                            <p class="top-right-text">Number of active cooperation<br> agreements<br>
+                                (MoUs/MoAs) </p>
+                        </div>
+                        <div class="top-right-block">
+                            <p class="top-right-number">XX</p>
+                            <p class="top-right-text">Participation in international <br> grants (Horizon <br>
+                                Europe, Erasmus+, BRICS <br> Program, etc.) </p>
+                        </div>
+                        <div class="top-right-block">
+                            <p class="top-right-number">XX</p>
+                            <p class="top-right-text">Strategic partnerships (within the frameworks
+                                of the EU, BRICS, CIS, OIC, <br>etc.) </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="date-container">
+                    <p class="date-number">01.12.2021</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="calendar__year-progress-bar__dpo"
+                        viewBox="0 0 100 12">
+                        <path fill="#FB9B2B" fill-opacity=".2"
+                            d="M11.5 0h4l-11 12h-4l11-12ZM17.5 0h4l-11 12h-4l11-12ZM23.5 0h4l-11 12h-4l11-12ZM29.5 0h4l-11 12h-4l11-12ZM35.5 0h4l-11 12h-4l11-12ZM41.5 0h4l-11 12h-4l11-12Z" />
+                        <path fill="#FB9B2B"
+                            d="M47.5 0h4l-11 12h-4l11-12ZM53.5 0h4l-11 12h-4l11-12ZM59.5 0h4l-11 12h-4l11-12ZM65.5 0h4l-11 12h-4l11-12ZM71.5 0h4l-11 12h-4l11-12ZM77.5 0h4l-11 12h-4l11-12ZM83.5 0h4l-11 12h-4l11-12ZM89.5 0h4l-11 12h-4l11-12ZM95.5 0h4l-11 12h-4l11-12Z" />
+                    </svg>
+                </div>
             </div>
             <div class="svg-container bottom-right">
                 <p class="block-title">University Admissions</p>
                 <p class="block-title">Professional Development Courses</p>
+                <div class="bottom-right-flex">
+                    <div class="small-frame">
+                        <div class="chart-line-container-bachelors-programm"></div>
+                        <div class="chart-line-container-masters-programm"></div>
+                    </div>
+                    <div class="grid-corner">
+                        <div class="grid-corner-block">
+                            <p class="grid-corner-number">XX</p>
+                            <p class="grid-corner-text">Number of Tests Completed</p>
+                        </div>
+                        <div class="grid-corner-block">
+                            <p class="grid-corner-number">XX</p>
+                            <p class="grid-corner-text">Enrolled</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="date-container">
+                    <p class="date-number">01.12.2021</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="calendar__year-progress-bar__dpo"
+                        viewBox="0 0 100 12">
+                        <path fill="#FB9B2B" fill-opacity=".2"
+                            d="M11.5 0h4l-11 12h-4l11-12ZM17.5 0h4l-11 12h-4l11-12ZM23.5 0h4l-11 12h-4l11-12ZM29.5 0h4l-11 12h-4l11-12ZM35.5 0h4l-11 12h-4l11-12ZM41.5 0h4l-11 12h-4l11-12Z" />
+                        <path fill="#FB9B2B"
+                            d="M47.5 0h4l-11 12h-4l11-12ZM53.5 0h4l-11 12h-4l11-12ZM59.5 0h4l-11 12h-4l11-12ZM65.5 0h4l-11 12h-4l11-12ZM71.5 0h4l-11 12h-4l11-12ZM77.5 0h4l-11 12h-4l11-12ZM83.5 0h4l-11 12h-4l11-12ZM89.5 0h4l-11 12h-4l11-12ZM95.5 0h4l-11 12h-4l11-12Z" />
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -175,9 +253,21 @@
                     <!-- Line chart будет создан здесь -->
                 </div>
             </div>
+            <div class="date-container">
+                <p class="date-number">01.12.2021</p>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="calendar__year-progress-bar__dpo"
+                    viewBox="0 0 100 12">
+                    <path fill="#FB9B2B" fill-opacity=".2"
+                        d="M11.5 0h4l-11 12h-4l11-12ZM17.5 0h4l-11 12h-4l11-12ZM23.5 0h4l-11 12h-4l11-12ZM29.5 0h4l-11 12h-4l11-12ZM35.5 0h4l-11 12h-4l11-12ZM41.5 0h4l-11 12h-4l11-12Z" />
+                    <path fill="#FB9B2B"
+                        d="M47.5 0h4l-11 12h-4l11-12ZM53.5 0h4l-11 12h-4l11-12ZM59.5 0h4l-11 12h-4l11-12ZM65.5 0h4l-11 12h-4l11-12ZM71.5 0h4l-11 12h-4l11-12ZM77.5 0h4l-11 12h-4l11-12ZM83.5 0h4l-11 12h-4l11-12ZM89.5 0h4l-11 12h-4l11-12ZM95.5 0h4l-11 12h-4l11-12Z" />
+                </svg>
+            </div>
         </div>
     </div>
 
+    <script src="./js/miniature.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
