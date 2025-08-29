@@ -6,11 +6,21 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: './src/index.js'
+        main: './src/index.js',
+        'employee-admin': './src/pages/employees/employee-admin/employee-admin.js',
+        'employee-academic': './src/pages/employees/employee-academic/employee-academic.js',
+        'student': './src/pages/student/student.js',
+        'science': './src/pages/science/science.js',
+        'industrial': './src/pages/industrial/industrial.js',
+        'compliance': './src/pages/compliance/compliance.js',
+        'development-courses': './src/pages/development-courses/development-courses.js',
+        'media-activity': './src/pages/media-activity/media-activity.js',
+        'admissinon-campgain': './src/pages/admissinon-campgain/admissinon-campgain.js',
+        'screen-saver': './src/pages/screen-saver/screen-saver.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js',
+        filename: '[name].js',
         publicPath: ''
     },
 
@@ -23,7 +33,7 @@ module.exports = {
                 watch: true
             },
             {
-                directory: path.resolve(__dirname, 'public'), // добавляем public как статическую папку
+                directory: path.resolve(__dirname, 'public'),
                 publicPath: '/',
                 watch: true
             }
@@ -79,18 +89,71 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            inject: 'body'
+            inject: 'body',
+            chunks: ['main'] // Указываем, какие чанки подключать
         }),
         new HtmlWebpackPlugin({
             template: './src/pages/employees/employee-admin/employee-admin.html',
             inject: 'body',
-            filename: 'employee-admin.html'
+            filename: 'employee-admin.html',
+            chunks: ['employee-admin'] // Только CSS для этой страницы
         }),
         new HtmlWebpackPlugin({
             template: './src/pages/employees/employee-academic/employee-academic.html',
             inject: 'body',
-            filename: 'employee-academic.html'
+            filename: 'employee-academic.html',
+            chunks: ['employee-academic'] // Только CSS для этой страницы
         }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/student/student.html',
+            inject: 'body',
+            filename: 'student.html',
+            chunks: ['student'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/science/science.html',
+            inject: 'body',
+            filename: 'science.html',
+            chunks: ['science'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/industrial/industrial.html',
+            inject: 'body',
+            filename: 'industrial.html',
+            chunks: ['industrial'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/compliance/compliance.html',
+            inject: 'body',
+            filename: 'compliance.html',
+            chunks: ['compliance'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/development-courses/development-courses.html',
+            inject: 'body',
+            filename: 'development-courses.html',
+            chunks: ['development-courses'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/media-activity/media-activity.html',
+            inject: 'body',
+            filename: 'media-activity.html',
+            chunks: ['media-activity'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/admissinon-campgain/admissinon-campgain.html',
+            inject: 'body',
+            filename: 'admissinon-campgain.html',
+            chunks: ['admissinon-campgain'] // Только CSS для этой страницы
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/screen-saver/screen-saver.html',
+            inject: 'body',
+            filename: 'screen-saver.html',
+            chunks: ['screen-saver'] // Только CSS для этой страницы
+        }),
+
+
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -113,6 +176,8 @@ module.exports = {
             ]
         }),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].css' // Генерирует отдельные CSS файлы
+        }),
     ]
 };

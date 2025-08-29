@@ -1,13 +1,13 @@
 export const adminData = [
-    { value: 23, name: 'Russian' },
-    { value: 4, name: 'Syria' },
-    { value: 4, name: 'Algeria' },
-    { value: 5, name: 'Kazakhstan' },
-    { value: 3, name: 'France' },
-    { value: 3, name: 'India' },
-    { value: 3, name: 'Turkmenistan' },
-    { value: 3, name: 'Sudan' },
-    { value: 3, name: 'Armenia' },
+    { value: 13, name: 'Russian' },
+    { value: 1, name: 'Syria' },
+    { value: 1, name: 'Algeria' },
+    { value: 1, name: 'Kazakhstan' },
+    { value: 1, name: 'France' },
+    { value: 1, name: 'India' },
+    { value: 1, name: 'Turkmenistan' },
+    { value: 1, name: 'Sudan' },
+    { value: 1, name: 'Armenia' },
 ];
 
 // Массив цветов для графика (в том порядке, в котором идут точки)

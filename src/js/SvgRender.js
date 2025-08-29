@@ -22,8 +22,10 @@ import topLeftLine from '../svg/navigation-lines/top-left-line.svg?inline'
 import topRightLine from '../svg/navigation-lines/top-right-line.svg?inline'
 import bottomLeftLine from '../svg/navigation-lines/bottom-left-line.svg?inline'
 import bottomRightLine from '../svg/navigation-lines/bottom-right-line.svg?inline'
+import buttonRegular from '../svg/buttons/button-regular.svg'
 
 
+import footerDecorElement from '../svg/footer-decor.svg'
 const svgConfig = {
     blocks: [
         { className: 'top-left', svg: topLeft },
@@ -45,6 +47,7 @@ const svgConfig = {
         { className: 'button-type-one', svg: buttonTypeOne },
         { className: 'button-type-two', svg: buttonTypeTwo },
         { className: 'button-home', svg: buttonHome },
+        { className: 'button-regular', svg: buttonRegular }
     ],
     header: [
         { className: 'search-input-container', svg: searchInput },
@@ -59,6 +62,9 @@ const svgConfig = {
         { className: 'top-right-line', svg: topRightLine },
         { className: 'bottom-left-line', svg: bottomLeftLine },
         { className: 'bottom-right-line', svg: bottomRightLine },
+    ],
+    footer: [
+        { className: 'footer', svg: footerDecorElement }
     ]
 };
 

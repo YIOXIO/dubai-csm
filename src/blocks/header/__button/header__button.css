@@ -18,10 +18,15 @@
     padding-block-end: 1.589vw;
     align-self: flex-end;
     transform: translateY(.8vw);
+    cursor: pointer;
+    margin-inline-end: 1vw;
 }
 
 .button-type-two{
     background-size: cover;
     padding-block: .781vw;
     padding-inline: 1.078vw;
+}
+.button-reset{
+    opacity: 0;
 }

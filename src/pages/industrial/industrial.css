@@ -1,0 +1,284 @@
+@import '../../styles/demo-delete.css';
+
+.header {
+    margin-block-end: 1.263vw;
+}
+
+.root {
+    padding-inline: 4.1vw;
+}
+
+.industrial-title {
+    font-size: 1.875vw;
+    color: #FFF;
+    font-style: normal;
+    font-variation-settings: 'wght' 500;
+    line-height: 66.667%;
+    letter-spacing: 0.188vw;
+    text-transform: uppercase;
+    margin-block-end: 4.2vw;
+}
+
+.industrial-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.25vw;
+    row-gap: 2.5vw;
+    margin-block-end: 2vw;
+    min-block-size: 31.735vw;
+    grid-template-rows: min-content;
+}
+
+.industrial-item {
+    transition: all 0.5s ease;
+    opacity: 1;
+    transform: scale(1);
+    inline-size: fit-content;
+}
+
+.industrial-item.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.industrial-card {
+    border-radius: 0.208vw;
+    background: hsla(150, 5%, 93%, 0.1);
+    inline-size: 21.975vw;
+    block-size: 8.904vw;
+    position: relative;
+    border-radius: 0.208vw;
+    border: 0.104vw solid hwb(216 12% 7%);
+    box-shadow: 0.104vw 0.104vw 0.625vw 0 hsla(0, 0%, 0%, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.industrial-card:hover {
+    transform: translateY(-0.208vw);
+    box-shadow: 0.208vw 0.208vw 1.25vw 0 hsla(0, 0%, 0%, 0.25);
+}
+
+.industrial-card__container {
+    padding-block: 2.188vw 1.25vw;
+    padding-inline: 1.25vw;
+}
+
+.industrial-card__img {
+    max-inline-size: 7.448vw;
+    block-size: 3.021vw;
+    border-radius: 0.248vw;
+    background-color: hsla(150, 5%, 97%, 1);
+    position: absolute;
+    top: -1.6vw;
+    left: 1.3vw;
+    object-fit: none;
+    inline-size: 100%;
+}
+
+.industrial-card__text {
+    color: #FFF;
+    font-size: 1.042vw;
+    font-style: normal;
+    font-variation-settings: 'wght' 500;
+    line-height: 130%;
+    /* 26px */
+}
+
+.industrial-card__footer {
+    border-radius: 0 0 4px 4px;
+    background-color: hsla(220, 43%, 35%, 0.8);
+    padding-block: 0.313vw;
+    padding-inline: 1.25vw;
+    block-size: 2.65vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+.industrial-interaction-title {
+    color: #FFF;
+    font-size: 1.667vw;
+    font-style: normal;
+    font-variation-settings: 'wght' 500;
+    line-height: 1.25vw;
+    letter-spacing: 0.167vw;
+    margin-block-end: 0.938vw;
+}
+
+.interaction-button {
+    color: #FFF;
+    font-size: 1.024vw;
+    line-height: 82%;
+    /* 16.12px */
+    padding-block: 0.781vw;
+    border-radius: 0.208vw;
+    border: 0.26vw solid hwb(216 12% 7%);
+    min-inline-size: 8.698vw;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6vw;
+    min-inline-size: 9.298vw;
+    padding-block: .781vw;
+    box-sizing: content-box;
+    inline-size: max-content;
+    padding-inline: 0.8vw;
+}
+
+.interaction-button:hover {
+    background: hsla(216, 12%, 7%, 0.3);
+}
+
+.interaction-button.active {
+    background: hwb(216 12% 7%);
+    border-color: hwb(216 20% 5%);
+}
+
+.interaction-list {
+    display: flex;
+justify-content: space-between;
+}
+
+.category-indicator {
+    inline-size: 0.662vw;
+    block-size: 0.662vw;
+    transform: rotate(45deg);
+    border: 0.199vw solid #6C38FF;
+}
+
+.industrial-item[data-category="marketing"] .category-indicator {
+    border-color: hsl(67, 100%, 68%);
+
+}
+
+.industrial-item[data-category="finance"] .category-indicator {
+    border-color: hsl(201, 100%, 63%);
+
+}
+
+.industrial-item[data-category="corporate-finance"] .category-indicator {
+    border-color: hsl(32, 96%, 58%);
+
+}
+
+.industrial-item[data-category="digital-business"] .category-indicator {
+    border-color: hsl(110, 100%, 68%);
+
+}
+
+.industrial-item[data-category="ai-education"] .category-indicator {
+    border-color: hsl(265, 100%, 63%);
+
+}
+
+.industrial-item[data-category="healthcare"] .category-indicator {
+    border-color: hsl(350, 95%, 70%);
+
+}
+
+/* Цвета для кнопок фильтрации */
+.interaction-button[data-filter="marketing"] .category-indicator {
+    border-color: hsl(67, 100%, 68%);
+
+}
+
+.interaction-button[data-filter="finance"] .category-indicator {
+    border-color: hsl(201, 100%, 63%);
+
+}
+
+.interaction-button[data-filter="corporate-finance"] .category-indicator {
+    border-color: hsl(32, 96%, 58%);
+
+}
+
+.interaction-button[data-filter="digital-business"] .category-indicator {
+    border-color: hsl(110, 100%, 68%);
+
+}
+
+.interaction-button[data-filter="ai-education"] .category-indicator {
+    border-color: hsl(265, 100%, 63%);
+
+}
+
+.interaction-button[data-filter="healthcare"] .category-indicator {
+    border-color: hsl(350, 95%, 70%);
+
+}
+
+
+.industrial-item {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    inline-size: fit-content;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.industrial-item.hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Анимация для сетки */
+.industrial-list {
+    transition: grid-template-rows 0.5s ease;
+}
+
+
+
+
+/* Эффект при наведении на карточку с изменением цвета индикатора */
+.industrial-card:hover .category-indicator {
+    transform: rotate(45deg) scale(1.2);
+}
+
+/* Анимация появления для контейнера списка */
+.industrial-list {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптация для лучшей производительности анимации */
+.industrial-item {
+    will-change: transform, opacity;
+}
+
+.industrial-card {
+    will-change: transform;
+}

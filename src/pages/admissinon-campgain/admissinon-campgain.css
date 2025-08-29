@@ -1,0 +1,24 @@
+@import '../../styles/demo-delete.css';
+
+.root{
+    overflow: auto;
+  block-size: 35vw;
+    &::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+&::-webkit-scrollbar-thumb{
+  display: none;
+}
+}
+
+.admissinon-campgain{
+  block-size: 95vw;
+    overflow: scroll;
+}
+.admissinon-campgain img{
+  inline-size: 100%;
+
+}

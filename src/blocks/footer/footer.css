@@ -1,0 +1,16 @@
+.footer{
+    block-size: 5.5vw;
+    bottom: 0;
+    inline-size: 100vw;
+    left: 0;
+    padding-block-start: 1.2vw;
+    padding-inline-start: 4.1vw;
+    position: absolute;
+    right: 0;
+    z-index: 222;
+    transform: translate(0vw, 0vw);
+}
+
+.footer__logo{
+    inline-size: 7.4vw;
+}

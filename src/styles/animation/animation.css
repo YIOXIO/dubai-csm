@@ -4,11 +4,11 @@
     z-index: 100;
 }
 
-.bottom-left-line, .top-left-line {
+.bottom-left-line, .top-left-line, .bottom-right-line {
     filter: drop-shadow(0 0 5px rgba(66, 139, 255, 0.5));
 }
 
-.bottom-left-line path, .top-left-line path {
+.bottom-left-line path, .top-left-line path, .bottom-right-line path {
     stroke: hsla(216, 86%, 53%, 1);
     stroke-width: 2;
     fill: none;

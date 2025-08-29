@@ -8,7 +8,9 @@
 body {
     font-family: 'Oswald', sans-serif;
     font-variation-settings: 'wght' 400;
-    /* Установка веса шрифта по умолчанию */
+    /* background-image: url('./img/bg.png'); */
+        background-size: contain;
+    background-attachment: fixed;
 }
 
 
@@ -112,6 +114,7 @@ body {
     transform: translate(-1.86vw, 8.3vw);
     padding-block-start: 1.8vw;
     padding-inline:1.3vw 0.6vw;
+    position: relative;
 }
 .bottom-right .block-title{
     margin-block-end: .25vw;
@@ -124,7 +127,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2vw;
-
+    z-index: 1;
 }
 
 
@@ -132,8 +135,15 @@ body {
     inline-size: 11.772vw;
     transform: translateX(-1.8vw);
     block-size: 7.372vw;
+        display: flex
+;
+    align-items: center;
+    justify-content: center;
 }
 
+.circle-t .circle-text{
+    transform: none;
+}
 .circle-rt {
     block-size: 17.882vw;
     inline-size: 15.522vw;
@@ -193,7 +203,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1;
+    /* z-index: -1; */
+    position: relative;
 }
 
 .circle-lt {
@@ -203,7 +214,7 @@ body {
         flex-direction: column;
     align-items: center;
     justify-content: center;
-        z-index: -1;
+        /* z-index: -1; */
 }
 
 
@@ -220,6 +231,7 @@ body {
     padding: 1.5vw 2.9vw;
     padding-block-start: 0;
     block-size: 100dvh;
+    position: relative;
 }
 
 .circle-container {
@@ -311,7 +323,7 @@ body {
 
 .legend-name {
     color: hsla(45, 33%, 82%, 1);
-    font-size: 0.349vw;
+        font-size: 0.499vw;;
     letter-spacing: 0.035vw;
     line-height: 89.431%;
 }
@@ -674,6 +686,39 @@ position: absolute;
     opacity: 0;
     animation: fadeInAfter 0.5s ease-in-out 0.5s forwards;
 }
+.bottom-right-line{
+    inline-size: 7.6vw;
+    right: 21.65vw;
+    top: 4.95vw;
+}
+
+.bottom-right-line::before{
+    content: "";
+    display: block;
+    inline-size: .442vw;
+    block-size: .442vw;
+    position: absolute;
+    background: hsla(216, 86%, 53%, 1);
+    left: -0.09vw;
+    rotate: 140deg;
+    top: -0.1vw;
+        opacity: 0;
+    animation: fadeInBefore 0.5s ease-in-out 1.7s forwards;
+}
+.bottom-right-line::after{
+    content: "";
+    display: block;
+    inline-size: .442vw;
+    block-size: .442vw;
+    position: absolute;
+    background: hsla(216, 86%, 53%, 1);
+    right: -0.23vw;
+    rotate: 136deg;
+    bottom: -0.05vw;
+    opacity: 0;
+    animation: fadeInAfter 0.5s ease-in-out 0.5s forwards;
+}
+
 
 .top-left-line{
         inline-size: 8vw;
@@ -716,12 +761,7 @@ position: absolute;
     opacity: 0;
     animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
 }
-.bottom-left-line svg {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
-}
+
 
 /* Анимация рисования линии */
 .bottom-left-line path {
@@ -735,7 +775,7 @@ position: absolute;
     opacity: 0;
     animation: fadeInSvg 0.5s ease-in-out 0.8s forwards;
 }
-.top-left-line svg {
+.bottom-left-line svg {
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -744,6 +784,11 @@ position: absolute;
 
 /* Анимация рисования линии */
 .top-left-line path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 1000;
+    animation: drawLine 1.5s linear 1s forwards;
+}
+.bottom-right-line path {
     stroke-dasharray: 600;
     stroke-dashoffset: 1000;
     animation: drawLine 1.5s linear 1s forwards;
@@ -810,9 +855,27 @@ position: absolute;
     transform: none;
     max-inline-size: 7vw;
     font-size: 0.573vw;
+    
 
 }
 
-.svg-container{
-    cursor: pointer;
+
+
+.button-container{
+    display: flex;
+    gap: 1.7vw;
+    transform: translate(-3.6vw, 11.4vw);
+}
+
+.button-regular{
+color: #fff;
+    font-size: .55vw;
+    font-variation-settings: "wght" 500;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    block-size: 2.734vw;
+    inline-size: 10.807vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
