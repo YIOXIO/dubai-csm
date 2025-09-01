@@ -18,9 +18,19 @@ function getDataType(name, current) {
 
 // Функция для парсинга числового значения
 function parseNumericValue(value) {
-    return parseFloat(value.replace('%', '').replace('M', '').replace('М', ''));
+    if (typeof value !== 'string') return value;
+
+    // Обрабатываем миллионы (M)
+    if (value.includes('M')) {
+        return parseFloat(value.replace('M', '').replace(',', '.')) * 1000000;
+    }
+
+    // Обрабатываем проценты и обычные числа
+    const numericString = value.replace('%', '').replace(',', '.').replace(/[^\d.-]/g, '');
+    return parseFloat(numericString) || 0;
 }
 
+// Функция для определения currentLevel на основе текущего значения и порогов
 // Функция для определения currentLevel на основе текущего значения и порогов
 function calculateCurrentLevel(row) {
     const currentValue = parseNumericValue(row.current);
@@ -34,10 +44,24 @@ function calculateCurrentLevel(row) {
         mediumMin = mediumMax = parseNumericValue(row.thresholdMedium);
     }
 
-    if (currentValue >= highThreshold) return "high";
-    if (currentValue >= mediumMin) return "medium";
-    if (currentValue >= lowThreshold) return "low";
-    return "low";
+    // Сравниваем с пороговыми значениями из данных
+    if (currentValue >= highThreshold) {
+        return "high";
+    }
+
+    if (currentValue >= mediumMin) {
+        // Проверяем, если значение выше максимального medium, но еще не достигло high
+        if (currentValue > mediumMax) {
+            return "high"; // Значение выше medium диапазона = high
+        }
+        return "medium";
+    }
+
+    if (currentValue >= lowThreshold) {
+        return "low";
+    }
+
+    return "low"; // Если даже ниже low threshold
 }
 
 // Функция для нормализации значения для прогресс-бара
